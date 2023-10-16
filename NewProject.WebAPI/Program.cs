@@ -14,6 +14,8 @@ using VendorView.Repositories;
 using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authorization;
+using VendorView.WebApi;
+using VendorView.Domain.BaseEntities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +35,7 @@ var builder = WebApplication.CreateBuilder(args);
 #endregion
 
 #region Mapper
-    builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 #endregion
 
 #region IdentityOptions
@@ -64,6 +66,7 @@ var builder = WebApplication.CreateBuilder(args);
 #endregion
 
 #region Repositories
+builder.Services.AddScoped(typeof(ICrudGenericManager<,,,>), typeof(CrudGenericManager<,,,>));
 builder.Services.AddScoped(typeof(IGeneralRepository<,>), typeof(GeneralRepository<,>));
 #endregion
 
