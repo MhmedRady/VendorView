@@ -12,8 +12,10 @@ namespace VendorView.WebApi.Controllers
     [ApiController]
     public class VendorController : GenaricController<int, Vendor, VendorDto, CreateVendorInput>
     {
-        public VendorController(ICrudGenericManager<int, Vendor, VendorDto, CreateVendorInput> genericService) : base(genericService)
+        private readonly IVendorService _vendorService;
+        public VendorController(IVendorService vendorService) : base(vendorService)
         {
+            _vendorService = vendorService;
         }
     }
 }
