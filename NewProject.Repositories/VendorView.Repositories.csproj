@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewProject.Domain\VendorView.Domain.csproj" />
+    <ProjectReference Include="..\NewProject.EntityFrameworkCore\VendorView.Infrastructure.csproj" />
+    <ProjectReference Include="..\NewProject.Shared\VendorView.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
